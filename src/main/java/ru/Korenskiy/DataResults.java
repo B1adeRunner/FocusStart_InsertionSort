@@ -26,12 +26,14 @@ public class DataResults {
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Запись в файл невозможна. Попробуйте выбрать другую директорию для запуска программы");
+            Thread.currentThread().stop();
         }
         try {
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Произошла ошибка ввода/вывода при закрытии потока записи в файл");
+            Thread.currentThread().stop();
         }
     }
 }

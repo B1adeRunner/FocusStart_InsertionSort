@@ -6,9 +6,18 @@ public class DataChecker {
     private String sortMode;
 
     public DataChecker(String[] data){
-        sourceFileName = data[0];
-        targetFileName = data[1];
-        sortMode = data[2];
+        if(data.length != 0) {
+            sourceFileName = data[0];
+            targetFileName = data[1];
+            sortMode = data[2];
+        } else {
+            System.out.println("Вы не ввели необходимые данные для запуска программы:\n" +
+                    "in.txt        имя исходного файла\n" +
+                    "out.txt       имя вывода информации\n" +
+                    "-a/-d         порядок соритровки, в возрастающем/убывающем порядке\n" +
+                    "Пример команды для запуска:\njava -jar InsertionSort-1.0-SNAPSHOT.jar in.txt out.txt -a");
+            Thread.currentThread().stop();
+        }
     }
 
     public void targetFileNameControl() {

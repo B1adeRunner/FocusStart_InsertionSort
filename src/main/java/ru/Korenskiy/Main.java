@@ -2,14 +2,14 @@ package ru.Korenskiy;
 
 public class Main {
     public static void main( String[] args ) {
-        String sourceFilename = args[0];
-        String targetFilename = args[1];
-        String sortMode = args[2];
-
         DataChecker dataChecker = new DataChecker(args);
         dataChecker.sortModeControl();
         dataChecker.sourceFileNameControl();
         dataChecker.targetFileNameControl();
+
+        String sourceFilename = args[0];
+        String targetFilename = args[1];
+        String sortMode = args[2];
 
         FileParser fileParser = new FileParser(sourceFilename);
         fileParser.takeFileStrings();
